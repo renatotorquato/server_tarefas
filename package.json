@@ -1,0 +1,30 @@
+{
+  "name": "server-memoriapp",
+  "version": "1.0.2",
+  "description": "aplicativo gerenciador de tarefas",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.jsx",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.3"
+  },
+  "dotenv": {
+    "whitelist": [
+      "HOST_EVE",
+      "USER_EVE",
+      "PASSWORD_EVE",
+      "DATABASE_EVE"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5"
+  }
+}
