@@ -36,7 +36,7 @@ App.post("/register", async (req, res) => {
 
 App.delete("/delete", (req, res) => {
   const { cod_task } = req.body;
-  let sqlDelet = "DELETE FROM tbtarefa WHERE cod_task = ?";
+  let sqlDelet = "DELETE FROM tarefas.tbtarefas WHERE cod_task = ?";
 
   db.query(sqlDelet, [cod_task], (err, result) => {
     if (err) console.log("Erro ao deletar " + err);
@@ -50,7 +50,7 @@ App.put("/edit", (req, res) => {
   const { details } = req.body;
   const { cod_task } = req.body;
   let sqlEdit =
-    "UPDATE tbtarefa SET nome = ?,data = ?,detalhes = ? WHERE cod_task = ?";
+    "UPDATE tarefas.tbtarefas SET nome = ?,data = ?,detalhes = ? WHERE cod_task = ?";
 
   db.query(sqlEdit, [name, date, details, cod_task], (err, result) => {
     if (err) {
@@ -63,7 +63,8 @@ App.put("/complete", (req, res) => {
   const { cod_task } = req.body;
   const status_task = "Concluída";
 
-  let sqlComplet = "UPDATE tbtarefas SET status_task = ? WHERE cod_task = ?";
+  let sqlComplet =
+    "UPDATE tarefas.tbtarefas SET status_task = ? WHERE cod_task = ?";
 
   db.query(sqlComplet, [status_task, cod_task], (err, result) => {
     if (err) {
