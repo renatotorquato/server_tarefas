@@ -20,6 +20,7 @@
     "whitelist": [
       "HOST_EVE",
       "USER_EVE",
+      "PORT_EVE",
       "PASSWORD_EVE",
       "DATABASE_EVE"
     ]
